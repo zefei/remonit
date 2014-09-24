@@ -1,6 +1,6 @@
 # Remonit
 
-Remonit lets you run simple scripts to monitor your computer and/or servers. 
+Remonit lets you run simple scripts to monitor your computer and/or servers.  
 Gathered stats are shown in nice web dashboards that zoom with display size. 
 
 Documentation is totally lacking at the moment. I will add them once I have 
@@ -19,8 +19,18 @@ www/ contains static web site.
 
 ## Build
 
-Build relies on grunt.js, you can install related packages using `npm install`. 
-To build, run `grunt nw | ./zip`.
+Build relies on grunt.js, you can install related packages using npm, you also 
+need to install packages for each node-webkit frondend, so:
+
+    npm install
+    cd nw.dev | npm install
+    cd ../nw.release | npm install
+    cd ..
+
+To build, use grunt:
+
+    grunt nw
+    sh ./zip
 
 ## License
 
