@@ -17,17 +17,42 @@ nw.dev/ and nw.release/ contain node-webkit frontend files.
 
 www/ contains static web site.
 
+## Running dev server and client
+
+Remonit needs node.js, meteor.js and node-webkit to run, install these to start.  
+You also need to install some packages for node-webkit client:
+
+    cd nw.dev | npm install
+    cd ..
+
+Then you can start the meteor server under web/ folder:
+
+    cd web
+    meteor
+
+Then you need to change node-webkit client configurations to set up correct url: 
+change `'main'` and `'node-remote'` values in `nw.dev/package.json` to your 
+local url.
+
+Finally, you can start the node-webkit client (assume you link `nw` to 
+node-webkit executable):
+
+    nw ./nw.dev
+
 ## Build
 
 Build relies on grunt.js, you can install related packages using npm, you also 
-need to install packages for each node-webkit frondend, so:
+need to install packages for the node-webkit frondend, so:
 
     npm install
-    cd nw.dev | npm install
-    cd ../nw.release | npm install
+    cd nw.release | npm install
     cd ..
 
-To build, use grunt:
+Then, like running dev client, you need to change server url for nw client: 
+change `'main'` and `'node-remote'` values in `nw.release/package.json` to your 
+actual server.
+
+Finally, to build, use grunt:
 
     grunt nw
     sh ./zip
