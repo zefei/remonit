@@ -1,0 +1,56 @@
+<template name="boardProperties.html">
+  <div ng-include="'closeButton.html'"></div>
+
+  <div class="properties-title">Dashboard</div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>General</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Name</label>
+        <input type="text" ng-model="config.name" ng-change="updateConfig()">
+      </div>
+
+      <div class="properties-input">
+        <label>Aspect ratio</label>
+        <select ng-model="config.aspect" ng-options="r for r in constants.aspects" ng-change="updateConfig()"></select>
+      </div>
+
+      <div class="properties-input">
+        <label>Background</label>
+        <input colorpicker="rgb" type="text" ng-model="config.backgroundColor" ng-change="updateConfig()">
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Screen</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Actions</label>
+        <button ng-attr="{disabled: isFirstScreen()}" ng-click="moveScreen(-1)" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-arrow-up"></i>
+          Move up
+        </button>
+        <div class="separator"></div>
+        <button ng-attr="{disabled: isLastScreen()}" ng-click="moveScreen(+1)" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-arrow-down"></i>
+          Move down
+        </button>
+      </div>
+      <div class="properties-input">
+        <label></label>
+        <button ng-attr="{disabled: isOnlyScreen()}" ng-click="removeScreen()" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-trash-o"></i>
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

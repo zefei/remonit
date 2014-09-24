@@ -1,0 +1,48 @@
+.topbar {
+  width: 100%;
+  height: 50px;
+  line-height: 20px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #58c;
+  text-align: center;
+}
+
+.topbar > div {
+  padding: 15px 0;
+}
+
+.topbar .topbar-left {
+  float: left;
+  text-align: left;
+  width: 100px;
+}
+
+.topbar .topbar-center {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.topbar .topbar-right {
+  float: right;
+  text-align: right;
+  width: 100px;
+}
+
+.topbar a {
+  color: #fff;
+  padding: 15px;
+}
+
+.topbar .menu-button {
+  font-size: 20px;
+  padding-bottom: 12px;
+  color: #fff;
+}
+
+.topbar ul.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: auto;
+}

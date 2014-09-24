@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-node-webkit-builder": "*"
+  }
+}

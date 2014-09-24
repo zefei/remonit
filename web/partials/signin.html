@@ -1,0 +1,41 @@
+<template name="signin.html">
+  <div class="signin-wrapper">
+    <div class="signin-container">
+      <div class="signin-brand"><span class="highlight">R</span>emonit</div>
+
+      <div class="signin-brand-description">Remote monitoring from any device</div>
+
+      <form ng-submit="submit()">
+        <div class="signin-info">
+          <span class="text-danger" ng-if="error && !loggingIn">[[error]]</span>
+          <span class="text-info" ng-if="loggingIn">signing in...</span>
+        </div>
+
+        <div class="signin-input">
+          <label>Email</label>
+          <input type="email" lowercase ng-model="email">
+        </div>
+
+        <div class="signin-input">
+          <label>Password</label>
+          <input type="password" ng-trim="false" ng-model="password">
+        </div>
+
+        <div class="signin-actions">
+          <button type="submit" ng-attr="{disabled: loggingIn}" ng-show="!registering" class="btn btn-primary">
+            Sign in
+          </button>
+
+          <button type="submit" ng-attr="{disabled: loggingIn}" ng-show="registering" class="btn btn-primary">
+            Create account
+          </button>
+
+          <div>
+            <a ng-show="!registering" ng-click="toggleMode()">Create account</a>
+            <a ng-show="registering" ng-click="toggleMode()">Sign in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

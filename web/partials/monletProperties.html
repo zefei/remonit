@@ -1,0 +1,118 @@
+<template name="monletProperties.html">
+  <div ng-include="'closeButton.html'"></div>
+
+  <div class="properties-title">Monlet</div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Styles</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Position</label>
+        <input ng-change="updateMonlet()" ng-model="monlet.position.left" type="number">
+        <div class="separator">&times;</div>
+        <input ng-change="updateMonlet()" ng-model="monlet.position.top" type="number">
+      </div>
+
+      <div class="properties-input">
+        <label>Size</label>
+        <input ng-change="updateMonlet()" ng-model="monlet.position.width" type="number">
+        <div class="separator">&times;</div>
+        <input ng-change="updateMonlet()" ng-model="monlet.position.height" type="number">
+      </div>
+
+      <div class="properties-input">
+        <label>Font</label>
+        <select ng-change="updateMonlet()" ng-model="monlet.styles.font" ng-options="f for f in constants.fonts"></select>
+        <div class="separator">@</div>
+        <input ng-change="updateMonlet()" ng-model="monlet.styles.fontSize" type="number">
+      </div>
+
+      <div class="properties-input">
+        <label>Alignment</label>
+        <span class="btn-group">
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.styles.textAlign" btn-radio="'left'">
+            <i class="fa fa-align-left"></i>
+          </button>
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.styles.textAlign" btn-radio="'center'">
+            <i class="fa fa-align-center"></i>
+          </button>
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.styles.textAlign" btn-radio="'right'">
+            <i class="fa fa-align-right"></i>
+          </button>
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.styles.textAlign" btn-radio="'justify'">
+            <i class="fa fa-align-justify"></i>
+          </button>
+        </span>
+        <div class="separator"></div>
+        <span class="btn-group">
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.position.scroll" btn-radio="'top'">
+            <i class="fa fa-step-backward rotate"></i>
+          </button>
+          <button class="btn btn-sm btn-default" ng-change="updateMonlet()" ng-model="monlet.position.scroll" btn-radio="'bottom'">
+            <i class="fa fa-step-forward rotate"></i>
+          </button>
+        </span>
+      </div>
+
+      <div class="properties-input">
+        <label>Color</label>
+        <input ng-change="updateMonlet()" ng-model="monlet.styles.color" colorpicker="rgb" type="text">
+        <div class="separator">on</div>
+        <input ng-change="updateMonlet()" ng-model="monlet.styles.backgroundColor" colorpicker="rgba" type="text">
+      </div>
+
+      <div class="properties-input">
+        <label>Z index</label>
+        <input ng-change="updateMonlet()" ng-model="monlet.styles.zIndex" min="-100" max="100" type="number">
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Content</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Content type</label>
+        <select ng-change="updateMonlet()" ng-model="monlet.type" ng-options="t for t in constants.monletTypes"></select>
+      </div>
+
+      <div class="properties-input">
+        <div ng-change="updateMonlet()" ng-model="monlet.content" resizable ui-codemirror="codemirrorOptions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-content" statebox>
+    <div ng-show="!sb.get()" class="pull-right">
+      <a ng-click="statebox('edit').toggle()">
+        [[statebox('edit').get() ? 'done' : 'edit']]
+      </a>
+    </div>
+
+    <div class="properties-group-title">
+      <span collapse-handle>Monitored Stats</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div ng-if="isStatsEmpty()">
+        <div class="monlet-stats-info">
+          <a href="/monitor">
+            You don't have any monitored stats yet.<br/>
+            Go to the Monitor page to monitor some!
+          </a>
+        </div>
+      </div>
+
+      <div ng-if="!isStatsEmpty()">
+        <div ng-show="!statebox('edit').get()" json-viewer="stats"></div>
+        <div ng-show="statebox('edit').get()" stats-editor="stats"></div>
+      </div>
+    </div>
+  </div>
+</template>

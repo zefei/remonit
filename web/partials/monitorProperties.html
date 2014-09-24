@@ -1,0 +1,76 @@
+<template name="monitorProperties.html">
+  <div ng-include="'closeButton.html'"></div>
+
+  <div class="properties-title">Monitor</div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Details</span>
+    </div>
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Name</label>
+        <input ng-change="updateMonitor()" ng-model="monitor.name" type="text">
+        <span ng-show="!isUniqueMonitorName()" class="text-danger">should be unique</span>
+        <span ng-show="!isValidMonitorName()" class="text-danger">reserved name</span>
+      </div>
+
+      <div class="properties-input">
+        <label>Location</label>
+        <select ng-change="updateMonitor()" ng-model="monitor.location" ng-options="l[0] as l[1] for l in locationOptions()"></select>
+        <a ng-click="addServer()">add server</a>
+      </div>
+
+      <div class="properties-input">
+        <label>Run every</label>
+        <input ng-change="updateMonitor()" min="0" ng-model="monitor.frequency" type="number">
+        seconds
+      </div>
+
+      <div class="properties-input">
+        <label>Actions</label>
+        <button ng-click="startMonitor()" ng-show="!monitor.enabled" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-play"></i>
+          Start
+        </button>
+        <button ng-click="stopMonitor()" ng-show="monitor.enabled" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-stop"></i>
+          Stop
+        </button>
+        <div class="separator"></div>
+        <button ng-click="removeMonitor()" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-trash-o"></i>
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Code</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <div ng-change="updateMonitor()" ng-model="monitor.code" resizable ui-codemirror="codemirrorOptions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Debug</span>
+    </div>
+
+    <div collapse="sb.get()">
+      <div json-viewer="stats[monitor.name]" name="'Current value'"></div>
+
+      <div class="properties-input">
+        <a ng-click="console.clear()" class="pull-right">clear</a>
+        <label>Console output</label><br />
+        <div log-viewer="console.text"></div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,26 @@
+<template name="monitor.html">
+  <div ng-include="'topbar.html'"></div>
+
+  <div ng-if="!node">
+    <div class="monitor-nonode">
+      Monitor has to be run on the desktop app
+    </div>
+  </div>
+
+  <div ng-if="node">
+    <div class="monitor-container">
+      <div class="monitor-main">
+        <div class="monitor-monitors" ng-include="'monitorList.html'"></div>
+        <div class="monitor-servers" ng-include="'serverList.html'"></div>
+      </div>
+
+      <div class="monitor-properties">
+        <div ng-show="!session.get('selectedMonitor') && !session.get('selectedServer')" ng-include="'monitorHelp.html'"></div>
+
+        <div class="monitor-properties-monitor" ng-show="session.get('selectedMonitor')" ng-include="'monitorProperties.html'"></div>
+
+        <div class="monitor-properties-server" ng-show="session.get('selectedServer')" ng-include="'serverProperties.html'"></div>
+      </div>
+    </div>
+  </div>
+</template>

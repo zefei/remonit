@@ -1,0 +1,8 @@
+<template name="statsEditor.html">
+  <div ng-repeat="(name, value) in stats | noReserved">
+    <span class="json-name">[[name]]:</span>
+    <span class="json-value">
+      <a ng-click="removeStats(name)">remove</a>
+    </span>
+  </div>
+</template>

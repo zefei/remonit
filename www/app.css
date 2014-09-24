@@ -1,0 +1,80 @@
+body {
+  color: #555;
+  min-width: 700px;
+}
+
+a {
+  outline: none !important;
+}
+
+.logo {
+  margin: 100px 0;
+  font-size: 100px;
+}
+
+.logo .highlight {
+  color: #38c;
+}
+
+.logo .description {
+  font-size: 22px;
+  color: #888;
+}
+
+.download {
+  width: 680px;
+  margin: 50px auto;
+  font-size: 18px;
+}
+
+.main-title {
+  font-size: 35px;
+  margin: 30px 0;
+}
+
+.main-text {
+  font-size: 18px;
+}
+
+.main-images {
+  margin: 30px 0;
+}
+
+.main-img {
+  width: 100%;
+  margin: auto;
+}
+
+.main-icon {
+  font-size: 40px;
+  margin: auto;
+}
+
+.icon1 {
+  margin-top: 80px;
+  display: none;
+}
+
+.up-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.up-button a {
+  color: #888;
+  font-size: 40px;
+}
+
+.footer {
+  margin: 10px 0 30px;
+}
+
+.footer a {
+  color: #888;
+}
+
+.social-buttons {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}

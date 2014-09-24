@@ -1,0 +1,42 @@
+<template name="monitorList.html">
+  <div class="monitor-main-title">
+    Monitors
+  </div>
+
+  <div class="monitor-main-actions">
+    <a class="link-default" popover="addMonitorPopover">
+      <i class="fa fa-plus"></i>
+      add
+    </a>
+    |
+    <a class="link-default" ng-click="startAllMonitors()">
+      <i class="fa fa-play"></i>
+      start all
+    </a>
+    |
+    <a class="link-default" ng-click="stopAllMonitors()">
+      <i class="fa fa-stop"></i>
+      stop all
+    </a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Status</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Run every (sec)</th>
+    </thead>
+    <tbody>
+      <tr ng-class="{active: isSelectedMonitor(monitor)}" ng-click="selectMonitor(monitor)" ng-repeat="monitor in monitors | orderBy:'name' track by monitor._id">
+        <td>
+          <span class="status" ng-class="{'status-gray': !monitor.enabled, 'status-green': monitor.enabled}"></span>
+          [[monitor.enabled ? 'running' : 'stopped']]
+        </td>
+        <td>[[monitor.name]]</td>
+        <td>[[locationText(monitor)]]</td>
+        <td>[[monitor.frequency]]</td>
+      </tr>
+    </tbody>
+  </table>
+</template>

@@ -1,0 +1,72 @@
+<template name="serverProperties.html">
+  <div ng-include="'closeButton.html'"></div>
+
+  <div class="properties-title">Server</div>
+
+  <div class="properties-content" statebox>
+    <div class="properties-group-title">
+      <span collapse-handle>Details</span>
+    </div>
+    <div collapse="sb.get()">
+      <div class="properties-input">
+        <label>Name</label>
+        <input ng-change="updateServer()" ng-model="server.name" type="text">
+        <span ng-show="!isUniqueServerName()" class="text-danger">should be unique</span>
+      </div>
+
+      <div class="properties-input">
+        <label>Host &amp; port</label>
+        <input ng-change="updateServer()" ng-model="server.host" type="text">
+        <div class="separator">:</div>
+        <input ng-change="updateServer()" ng-model="server.port" type="text">
+      </div>
+
+      <div class="properties-input">
+        <label>Auth method</label>
+        <select ng-change="updateServer()" ng-model="server.auth" ng-options="a for a in constants.authOptions"></select>
+      </div>
+
+      <div class="properties-input">
+        <label>Username</label>
+        <input ng-change="updateServer()" ng-model="server.username" type="text">
+      </div>
+
+      <div ng-show="server.auth === 'password'">
+        <div class="properties-input">
+          <label>Password</label>
+          <input ng-change="updateServer()" ng-model="server.password" ng-trim="false" type="password">
+        </div>
+      </div>
+
+      <div ng-show="server.auth === 'public key'">
+        <div class="properties-input">
+          <label>Passphrase</label>
+          <input ng-change="updateServer()" ng-trim="false" ng-model="server.passphrase" type="password">
+        </div>
+
+        <div class="properties-input" statebox>
+          <label>Private key</label>
+          <a ng-click="sb.toggle()">[[sb.get() ? 'done' : 'edit']]</a><br />
+          <textarea ng-show="sb.get()" ng-change="updateServer()" ng-trim="false" ng-model="server.privateKey"></textarea>
+        </div>
+      </div>
+
+      <div class="properties-input">
+        <label>Actions</label>
+        <button ng-click="connectServer()" ng-show="!server.enabled" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-link"></i>
+          Connect
+        </button>
+        <button ng-click="disconnectServer()" ng-show="server.enabled" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-unlink"></i>
+          Disconnect
+        </button>
+        <div class="separator"></div>
+        <button ng-click="removeServer()" unfocusable class="btn btn-sm btn-default">
+          <i class="fa fa-trash-o"></i>
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

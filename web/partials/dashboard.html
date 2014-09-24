@@ -1,0 +1,16 @@
+<template name="dashboard.html">
+  <div class="dashboard-topbar">
+    <ul class="dashboard-menu">
+      <li><span>[[user.username]]</span></li>
+      <li><a ng-click="signout()">Sign out</a></li>
+    </ul>
+  </div>
+
+  <div class="dashboard-help">
+    <p>Swipe or use arrow keys to switch between screens</p>
+  </div>
+
+  <div rn-carousel rn-carousel-index="index" rn-carousel-indicator class="dashboard-container">
+    <div ng-repeat="screen in dashboard.screens" monlet-board monlets="monlets" config="config" stats="stats" screen="screen" width="100%" height="100%"></div>
+  </div>
+</template>

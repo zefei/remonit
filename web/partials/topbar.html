@@ -1,0 +1,29 @@
+<template name="topbar.html">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a ng-show="controller === 'monitor'" href="/designer">Designer</a>
+      <a ng-show="controller === 'designer'" href="/monitor">Monitor</a>
+    </div>
+
+    <div class="topbar-center">
+      <label ng-show="controller === 'monitor'">Monitor</label>
+      <label ng-show="controller === 'designer'">Designer</label>
+    </div>
+
+    <div class="topbar-right">
+      <a data-toggle="dropdown" dropdown class="menu-button">
+        <i class="fa fa-bars"></i>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a href="/dashboard">Open Dashboard</a></li>
+        <li><a href="/monitor">Open Monitor</a></li>
+        <li><a href="/designer">Open Designer</a></li>
+        <li><a ng-click="openHomepage()">About Remonit</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">[[user.username]]</li>
+        <li><a ng-click="signout()">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</template>

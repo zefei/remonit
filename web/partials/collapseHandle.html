@@ -1,0 +1,8 @@
+<template name="collapseHandle.html">
+  <a class="link-muted" ng-click="sb.toggle()">
+    <span ng-class="{rotate: !sb.get()}">
+      <i class="fa fa-play"></i>
+    </span>
+    <span ng-transclude></span>
+  </a>
+</template>

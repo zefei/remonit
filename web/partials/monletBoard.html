@@ -1,0 +1,11 @@
+<template name="monletBoard.html">
+  <div class="monlet-board-wrapper" ng-class="{selected: isSelectedScreen()}">
+    <div class="monlet-board" ng-click="selectScreen()">
+      <div ng-if="designer">
+        <div ng-repeat="monlet in monlets | belongsToScreen:screen track by monlet._id" monlet-dummy="monlet"></div>
+      </div>
+
+      <div ng-repeat="monlet in monlets | belongsToScreen:screen track by monlet._id" monlet="monlet" stats="stats" designer="designer"></div>
+    </div>
+  </div>
+</template>

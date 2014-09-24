@@ -1,0 +1,18 @@
+{
+  "name": "Remonit",
+  "version": "0.2.0",
+  "main": "http://node.192.168.2.10.xip.io/",
+  "node-remote": "node.192.168.2.10.xip.io",
+  "window": {
+    "title": "Remonit",
+    "width": 1100,
+    "height": 700,
+    "icon": "medium-32x32.png"
+  },
+  "single-instance": false,
+  "node-main": "index.js",
+  "dependencies": {
+    "request": "*",
+    "ssh2": "*"
+  }
+}

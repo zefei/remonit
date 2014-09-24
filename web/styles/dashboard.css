@@ -1,0 +1,64 @@
+.dashboard-topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  z-index: 100;
+  color: #fff;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.dashboard-topbar ul.dashboard-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-topbar ul.dashboard-menu li span {
+  color: #aaa;
+  display: block;
+  padding: 3px 15px;
+}
+
+.dashboard-topbar ul.dashboard-menu li a {
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+}
+
+ul.dashboard-menu li a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.dashboard-help {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 100;
+}
+
+.dashboard-help p {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.dashboard-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.rn-carousel-indicator {
+  display: none;
+  position: fixed;
+  bottom: 0;
+}

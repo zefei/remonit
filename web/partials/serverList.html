@@ -1,0 +1,38 @@
+<template name="serverList.html">
+  <div class="monitor-main-title">
+    Servers
+  </div>
+
+  <div class="monitor-main-actions">
+    <a class="link-default" ng-click="addServer()">
+      <i class="fa fa-plus"></i>
+      add
+    </a>
+    |
+    <a class="link-default" ng-click="connectAllServers()">
+      <i class="fa fa-link"></i>
+      connect all
+    </a>
+    |
+    <a class="link-default" ng-click="disconnectAllServers()">
+      <i class="fa fa-unlink"></i>
+      disconnect all
+    </a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Connection</th>
+      <th>Name</th>
+    </thead>
+    <tbody>
+      <tr ng-class="{active: isSelectedServer(server)}" ng-click="selectServer(server)" ng-repeat="server in servers | orderBy:'name' track by server._id">
+        <td>
+          <span class="status status-[[(serverStatus(server)[1])]]"></span>
+          [[(serverStatus(server)[0])]]
+        </td>
+        <td>[[server.name]]</td>
+      </tr>
+    </tbody>
+  </table>
+</template>

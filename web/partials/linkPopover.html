@@ -1,0 +1,18 @@
+<template name="linkPopover.html">
+  <p>
+    <div class="pull-right">
+      <a ng-click="openDashboard()">
+        <i class="fa fa-external-link"></i>
+        open
+      </a>
+    </div>
+
+    <label>Dashboard URL</label><br />
+
+    <input style="width:100%" type="text" ng-model="dashboardUrl" readonly select-on-click>
+  </p>
+
+  <p>
+    <div qrcode="dashboardUrl"></div>
+  </p>
+</template>

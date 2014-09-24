@@ -1,0 +1,51 @@
+@import "mixins";
+
+[collapse-handle] {
+  cursor: default;
+}
+
+[collapse-handle] .rotate {
+  display: inline-block;
+  .transform(rotate(90deg));
+}
+
+[json-viewer], [stats-editor] {
+  cursor: default;
+  line-height: 1.5;
+}
+
+[json-viewer] .json-subobj, [stats-editor] .json-subobj {
+  margin-left: 18px;
+}
+
+[json-viewer] .json-name, [stats-editor] .json-name {
+  color: #000;
+}
+
+.CodeMirror {
+  padding: 0;
+}
+
+.CodeMirror-lines {
+  padding: 2px 0;
+}
+.CodeMirror pre {
+  padding: 0 5px;
+}
+
+.CodeMirror-selected {
+  background: #ddd;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: #b3d4fd;
+}
+
+.popover {
+  border-radius: 0;
+  max-width: 400px;
+}
+
+.fa.rotate {
+  .transform(rotate(90deg));
+}

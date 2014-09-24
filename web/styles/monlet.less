@@ -1,0 +1,104 @@
+@import "mixins";
+
+.monlet-board-wrapper {
+  position: relative;
+}
+
+.monlet-board {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  cursor: default;
+}
+
+.monlet {
+  position: absolute;
+  box-sizing: content-box;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.designer-monlet-board .monlet, .monlet.ui-draggable {
+  border: solid 1px #ccc;
+}
+
+.monlet-board .monlet-dummy {
+  width: 1px;
+  height: 1px;
+  float: left;
+  outline: none;
+}
+
+.designer-monlet-board .monlet.selected, .monlet.selected.ui-draggable {
+  border: solid 2px #ccc;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+.monlet .monlet-close {
+  color: #ccc;
+  display: none;
+  position: absolute;
+  top: -2px;
+  right: 3px;
+  z-index: 1010;
+  .user-select(none);
+}
+
+.designer-monlet-board .monlet.selected .monlet-close {
+  display: block;
+}
+
+.monlet .monlet-resize {
+  color: #ccc;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  z-index: 1011;
+  .user-select(none);
+  font-size: inherit;
+  width: auto;
+  height: auto;
+}
+
+.designer-monlet-board .monlet.selected .monlet-resize {
+  display: block;
+}
+
+.monlet .monlet-content {
+  white-space: nowrap;
+  .transform-origin(top left);
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+.monlet.remove {
+  background-color: rgba(0,0,0,0.8) !important;
+}
+
+.monlet .monlet-remove {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  text-align: center;
+  height: 20px;
+  margin: auto;
+  display: none;
+}
+
+.monlet.remove .monlet-content {
+  display: none;
+}
+
+.monlet.remove .monlet-remove {
+  display: block;
+}

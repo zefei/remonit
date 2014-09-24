@@ -1,0 +1,15 @@
+<template name="monlet.html">
+  <div class="monlet" ng-click="select($event)" ng-class="{selected: isSelected()}">
+    <div class="monlet-close" ng-click="remove($event)">
+      <i class="fa fa-times"></i>
+    </div>
+    <div class="monlet-resize ui-resizable-handle ui-resizable-se">
+      <i class="fa fa-expand"></i>
+    </div>
+    <div class="monlet-content"></div>
+    <div class="monlet-remove">
+      <i class="fa fa-trash-o"></i>
+      drop to remove
+    </div>
+  </div>
+</template>

@@ -1,0 +1,96 @@
+* {
+  outline: none !important;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: normal;
+}
+
+hr {
+  margin: 10px 0;
+  padding: 0;
+}
+
+a, a:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+a.link-default, a.link-muted {
+  color: #888;
+}
+
+a.link-default:hover {
+  color: #555;
+}
+
+button {
+  cursor: default !important;
+}
+
+label {
+  font-weight: normal;
+}
+
+input, select, textarea, .CodeMirror, [log-viewer] {
+  border: 1px solid #aaa;
+  border-radius: 0;
+  background-color: #fff;
+  height: 26px;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 2px 5px;
+}
+
+[log-viewer] {
+  white-space: pre-wrap;
+  word-wrap: normal;
+}
+
+input:focus, textarea:focus, select:focus, .CodeMirror-focused, button:active {
+  border: 1px solid #58f;
+}
+
+pre, code {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: inherit;
+  border-radius: inherit;
+  white-space: pre;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+ul.dropdown-menu {
+  position: relative;
+  border-radius: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+}
+
+ul.dropdown-menu li {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+ul.dropdown-menu li.dropdown-header {
+  padding: 3px 15px;
+  margin: 0;
+}
+
+ul.dropdown-menu li a {
+  padding: 10px 15px;
+  margin: 0;
+}
+
+ul.dropdown-menu li.divider {
+  margin: 0;
+  padding: 0;
+}

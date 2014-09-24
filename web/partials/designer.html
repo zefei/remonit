@@ -1,0 +1,43 @@
+<template name="designer.html">
+  <div ng-include="'topbar.html'"></div>
+
+  <div class="designer-container">
+    <div class="designer-toolbar">
+      <div class="designer-toolbar-title">Monlets</div>
+      <div ng-repeat="type in constants.monletTypes" monlet-avatar type="[[type]]"></div>
+    </div>
+
+    <div class="designer-dashboard">
+      <div class="designer-dashboard-title">
+        Dashboard
+      </div>
+
+      <div class="designer-dashboard-actions">
+        <a class="link-default" ng-click="addScreen()">
+          <i class="fa fa-plus"></i>
+          add screen
+        </a>
+        |
+        <a class="link-default" href="/dashboard">
+          <i class="fa fa-desktop"></i>
+          view live
+        </a>
+        |
+        <a class="link-default" popover="linkPopover">
+          <i class="fa fa-link"></i>
+          link
+        </a>
+      </div>
+
+      <div class="designer-monlet-board" ng-repeat="screen in dashboard.screens" monlet-board monlets="monlets" config="config" stats="stats" screen="screen" designer="true" width="100%"></div>
+    </div>
+
+    <div class="designer-properties">
+      <div ng-show="!session.get('selectedMonlet') && !session.get('selectedScreen')" ng-include="'designerHelp.html'"></div>
+
+      <div class="designer-properties-monlet" ng-show="session.get('selectedMonlet')" ng-include="'monletProperties.html'"></div>
+
+      <div class="designer-properties-board" ng-show="session.get('selectedScreen')" ng-include="'boardProperties.html'"></div>
+    </div>
+  </div>
+</template>

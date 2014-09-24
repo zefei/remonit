@@ -1,0 +1,55 @@
+<template name="addMonitorPopover.html">
+  <p>
+    <a ng-click="addMonitor()">Add empty monitor</a>
+  </p>
+
+  <hr />
+
+  <p>Or choose a monitor template:</p>
+
+  <p>
+    System load:
+    <a ng-click="addMonitor('loadMac')">Mac</a>,
+    <a ng-click="addMonitor('loadLinux')">Linux</a>,
+    <a ng-click="addMonitor('loadWin')">Windows</a>
+  </p>
+
+  <p>
+    Disk usage:
+    <a ng-click="addMonitor('diskMac')">Mac</a>,
+    <a ng-click="addMonitor('diskLinux')">Linux</a>,
+    <a ng-click="addMonitor('diskWin')">Windows</a>
+  </p>
+
+  <p>
+    List processes by CPU usage:<br />
+    <a ng-click="addMonitor('topCpuMac')">Mac</a>,
+    <a ng-click="addMonitor('topCpuLinux')">Linux</a>
+  </p>
+
+  <p>
+    List processes by memory usage:<br />
+    <a ng-click="addMonitor('topMemoryMac')">Mac</a>,
+    <a ng-click="addMonitor('topMemoryLinux')">Linux</a>,
+    <a ng-click="addMonitor('topMemoryWin')">Windows</a>
+  </p>
+
+  <p>
+    Watch log file:
+    <a ng-click="addMonitor('logMac')">Mac</a>,
+    <a ng-click="addMonitor('logLinux')">Linux</a>
+  </p>
+
+  <p>
+    <a ng-click="addMonitor('datetime')">Date &amp; time</a>
+  </p>
+
+  <div ng-show="isWin">
+    <hr />
+    <p>
+      * Windows' native command line<br />
+      has limited functions.<br />
+      Use of Cygwin is recommanded.
+    </p>
+  </div>
+</template>

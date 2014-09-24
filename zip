@@ -1,0 +1,22 @@
+#!/bin/sh
+
+VERSION=`cat VERSION`
+
+rm -r build/dist
+mkdir -p build/dist
+
+HERE=`pwd`
+
+cd "$HERE/build/releases/Remonit/win"
+find Remonit/ | zip "$HERE/build/dist/remonit-$VERSION-win.zip" -@
+
+cd "$HERE/build/releases/Remonit/mac"
+find . | zip "$HERE/build/dist/remonit-$VERSION-mac.zip" -@
+
+cd "$HERE/build/releases/Remonit/linux32"
+find Remonit/ | zip "$HERE/build/dist/remonit-$VERSION-linux32.zip" -@
+
+cd "$HERE/build/releases/Remonit/linux64"
+find Remonit/ | zip "$HERE/build/dist/remonit-$VERSION-linux64.zip" -@
+
+cd $HERE

@@ -1,0 +1,136 @@
+@import "mixins";
+
+.monitor-nonode {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 65px;
+  font-size: 30px;
+  color: #888;
+}
+
+.monitor-container {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  .display-flex;
+}
+
+.monitor-main {
+  .flex(1);
+  .display-flex;
+  .flex-direction(column);
+}
+
+.monitor-main > div {
+  overflow: auto;
+  padding: 15px;
+}
+
+.monitor-monitors {
+  .flex(1);
+}
+
+.monitor-servers {
+  .flex(1);
+  min-height: 250px;
+  height: 30%;
+}
+
+.monitor-main-title {
+  display: inline-block;
+  font-size: 25px;
+}
+
+.monitor-main-actions {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.monitor-main-actions a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.monitor-main-actions ul.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  left: 140px;
+}
+
+.monitor-properties {
+  position: relative;
+  overflow: auto;
+  padding: 15px;
+  min-width: 365px;
+  width: 30%;
+  height: 100%;
+}
+
+.monitor-properties-monitor .properties-input .CodeMirror {
+  height: 250px;
+}
+
+.monitor-properties-monitor .json-value a {
+  color: #080 !important;
+}
+
+.monitor-help {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .display-flex;
+  .flex-direction(column);
+  font-size: 15px;
+}
+
+.monitor-help > div {
+  overflow: auto;
+  padding: 15px;
+}
+
+.monitor-help-monitors {
+  .flex(1);
+  height: 70%;
+}
+
+.monitor-help-servers {
+  .flex(1);
+  min-height: 250px;
+  height: 30%;
+}
+
+.status {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-bottom: -1px;
+}
+
+.status-green {
+  background-color: #3a3;
+}
+
+.status-blue {
+  background-color: #58c;
+}
+
+.status-yellow {
+  background-color: #aa0;
+}
+
+.status-red {
+  background-color: #a33;
+}
+
+.status-gray {
+  background-color: #aaa;
+}

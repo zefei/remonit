@@ -1,0 +1,80 @@
+<template name="jsonViewer.html">
+  <div ng-switch="getType()">
+    <div ng-switch-when="unnamed">
+      <div ng-repeat="(objName, objValue) in value | avoidNaN track by objName" json-viewer="objValue" name="objName"></div>
+    </div>
+
+    <div ng-switch-when="object">
+      <div statebox="true">
+        <span collapse-handle><span class="json-name">[[name]]:</span></span>
+        <span class="json-value">
+          <a ng-click="click()">{...}</a>
+        </span>
+        <div class="json-subobj" collapse="sb.get()">
+          <div ng-repeat="(objName, objValue) in value | avoidNaN track by objName" json-viewer="objValue" name="objName"></div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-switch-when="array">
+      <div statebox="true">
+        <span collapse-handle><span class="json-name">[[name]]:</span></span>
+        <span class="json-value">
+          <a ng-click="click()">[...]</a>
+        </span>
+        <div class="json-subobj" collapse="sb.get()">
+          <div ng-repeat="item in value | avoidNaN track by $index" json-viewer="item" name="$index"></div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-switch-when="emptyObject">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()">[ ]</a>
+      </span>
+    </div>
+
+    <div ng-switch-when="emptyArray">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()">{ }</a>
+      </span>
+    </div>
+
+    <div ng-switch-when="string">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()" class="json-value">"[[truncate(value)]]"</a>
+      </span>
+    </div>
+
+    <div ng-switch-when="number">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()" class="json-value">[[value]]</a>
+      </span>
+    </div>
+
+    <div ng-switch-when="boolean">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()" class="json-value"><em>[[value]]</em></a>
+      </span>
+    </div>
+
+    <div ng-switch-when="null">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()" class="json-value"><em>null</em></a>
+      </span>
+    </div>
+
+    <div ng-switch-when="undefined">
+      <span class="json-name">[[name]]:</span>
+      <span class="json-value">
+        <a ng-click="click()" class="json-value"><em>undefined</em></a>
+      </span>
+    </div>
+  </div>
+</template>

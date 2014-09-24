@@ -1,0 +1,90 @@
+@import "mixins";
+
+.designer-container {
+  position: fixed !important;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  .display-flex;
+}
+
+.designer-container > div {
+  overflow: auto;
+  padding: 15px;
+}
+
+.designer-toolbar {
+  min-width: 100px;
+  width: 120px;
+}
+
+.designer-dashboard {
+  .flex(1);
+}
+
+.designer-properties {
+  min-width: 365px;
+  width: 30%;
+}
+
+.designer-toolbar-title {
+  text-align: center;
+  font-size: 16px;
+}
+
+.monlet-avatar {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border: solid 1px #ccc;
+  margin: 10px auto 15px;
+  cursor: default;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.monlet-avatar label {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.monlet-avatar .monlet-avatar-add {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #383;
+  display: none;
+}
+
+.monlet-avatar.add .monlet-avatar-add {
+  display: block;
+}
+
+.designer-dashboard-title {
+  display: inline-block;
+  font-size: 25px;
+}
+
+.designer-dashboard-actions {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.designer-dashboard-actions a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.designer-monlet-board {
+  border: solid 2px #aaa;
+  background-color: #000;
+  color: #fff;
+  margin: 10px 0 15px;
+}
+
+.designer-monlet-board.selected {
+  border: solid 2px #58f;
+}
+
+.monlet-stats-info {
+  margin: 20px 0;
+  text-align: center;
+}
