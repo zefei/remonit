@@ -1,3 +1,5 @@
+// simple angular directive with alternating states
+//
 'use strict'
 
 angular.module('statebox', [])

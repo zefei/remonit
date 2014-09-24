@@ -1,3 +1,5 @@
+// main app entry
+//
 'use strict'
 
 angular.module('remonit', [
@@ -27,11 +29,13 @@ angular.module('remonit', [
   }
 ])
 
+// test if client is node-webkit or just browsers
 .constant('node',
   typeof require === 'undefined' ?
   null : process.mainModule.exports
 )
 
+// node-webkit gui instance
 .constant('gui',
   typeof require === 'undefined' ?
   null : require('nw.gui')
@@ -58,6 +62,7 @@ angular.module('remonit', [
   }
 }])
 
+// skip current anuglarjs digest cycle
 .factory('safeApply', function() {
   return function(scope, fn) {
     setTimeout(function() {
@@ -104,6 +109,7 @@ angular.module('remonit', [
   }
 }])
 
+// register reactive data sources
 .factory('useResource', ['$autorun', function($autorun) {
   return function(scope) {
     var resources = _.rest(arguments, 1)
@@ -167,6 +173,7 @@ angular.module('remonit', [
   }
 }])
 
+// init globals
 .run(['$rootScope', 'useResource', 'constants', 'node', 'initAccount',
   function($rootScope, useResource, constants, node, initAccount) {
     useResource($rootScope, 'user')
@@ -192,11 +199,10 @@ angular.module('remonit', [
   }
 ])
 
+// set up idle mode for node-webkit
 .run(['$rootScope', '$location', 'node', 'safeApply',
   function($rootScope, $location, node, safeApply) {
     if (!node) return
-
-    window.tt = $rootScope
 
     var url
     window.setIdle = function(idle) {

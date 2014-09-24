@@ -1,3 +1,5 @@
+// patch meteor collection for easy saving object
+//
 _.extend(Meteor.Collection.prototype, {
   $save: function(obj) {
     if (!obj._id) return

@@ -1,3 +1,5 @@
+// not really sandboxes, just iframes to run js in semi-separate environment
+//
 Sandbox = function(console) {
   this.iframe = document.createElement('iframe')
   this.iframe.style.display = 'none'

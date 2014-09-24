@@ -1,3 +1,5 @@
+// mimic console object and save log to database
+//
 Console = function(scope) {
   this.text = ''
   this.apply = _.throttle(function() {

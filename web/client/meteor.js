@@ -1,3 +1,6 @@
+// meteor.js and angularjs integration
+// see https://medium.com/@zfxuan/the-wonderful-duo-using-meteor-and-angularjs-together-4d603a4651bf
+//
 'use strict'
 
 angular.module('meteor', [])

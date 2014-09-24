@@ -1,5 +1,5 @@
 // patched to be used as a regular module
-
+//
 'use strict';
 
 var name = 'ngAttr';

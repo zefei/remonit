@@ -1,5 +1,7 @@
+// mscdex/ssh2 wrapper
+//
 Connection = function(ssh, server, timeout, wait) {
-  this.ssh = ssh
+  this.ssh = ssh // ssh2 instance
   this.server = server
   this.timeout = timeout
   this.wait = wait

@@ -1,3 +1,5 @@
+// constants
+//
 'use strict'
 
 angular.module('remonit')
@@ -21,6 +23,7 @@ angular.module('remonit')
 
   fonts: ['Open Sans', 'Inconsolata', 'Droid Serif', 'Play', 'Quicksand', 'Oswald'],
 
+  // google fonts stuff
   fontStyles: {
     'Open Sans': ["<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>", "'Open Sans', sans-serif"],
     'Inconsolata': ["<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>", "'Inconsolata', monospace"],

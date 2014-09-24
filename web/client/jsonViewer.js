@@ -1,3 +1,4 @@
+// json object viewer, recursive angular directive!
 'use strict'
 
 angular.module('remonit')

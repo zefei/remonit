@@ -1,3 +1,5 @@
+// canonical publish method for all meteor collection classes
+//
 function simplePublish(collection, name){
   Meteor.publish(name, function () {
     return collection.find({userId: this.userId})

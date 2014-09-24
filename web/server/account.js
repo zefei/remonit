@@ -1,3 +1,5 @@
+// account registration at server side
+//
 'use strict'
 
 Accounts.onCreateUser(function(options, user) {

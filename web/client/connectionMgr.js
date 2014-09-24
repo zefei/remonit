@@ -1,3 +1,5 @@
+// manages ssh2 instances, watching $rootScope.servers
+//
 'use strict'
 
 angular.module('remonit')

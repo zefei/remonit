@@ -1,3 +1,6 @@
+// pouchdb and meteor.js integration
+// I should probably write about this, it's pretty useful in fact
+//
 'use strict'
 
 angular.module('pouchdb', [])
