@@ -1,15 +1,19 @@
-# Remonit - Remote monitoring from any device
+# Remonit
+
+Remonit lets you run simple scripts to monitor your computer and/or servers. 
+Gathered stats are shown in nice web dashboards that zoom with display size. 
 
 Documentation is totally lacking at the moment. I will add them once I have 
 time.
 
 ## Project structure
 
-Source files are under web/ folder. Inside it's a meteor.js project that 
-requires meteor to run. Meteor.js is used as backend, and frontend is angularjs.
+Remonit uses meteor.js as backend and angularjs as frontend. It is then packaged 
+in node-webkit for cross-platform distribution.
 
-nw.dev/ and nw.release/ contain node-webkit frontend files. Node-webkit is the 
-outmost wrapper.
+Main source files are under web/ folder. Inside it's the meteor.js project.
+
+nw.dev/ and nw.release/ contain node-webkit frontend files.
 
 www/ contains static web site.
 
