@@ -11,11 +11,9 @@ time.
 Remonit uses meteor.js as backend and angularjs as frontend. It is then packaged 
 in node-webkit for cross-platform distribution.
 
-Main source files are under web/ folder. Inside it's the meteor.js project.
+Main source files are under src/ folder. Inside it's the meteor.js project.
 
 nw.dev/ and nw.release/ contain node-webkit frontend files.
-
-www/ contains static web site.
 
 ## Running dev server and client
 
@@ -25,9 +23,9 @@ You also need to install some packages for node-webkit client:
     cd nw.dev | npm install
     cd ..
 
-Then you can start the meteor server under web/ folder:
+Then you can start the meteor server under src/ folder:
 
-    cd web
+    cd src
     meteor
 
 Then you need to change node-webkit client configurations to set up correct url: 
